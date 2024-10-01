@@ -1,25 +1,3 @@
-// const {
-//   shareAll,
-//   withModuleFederationPlugin,
-// } = require("@angular-architects/module-federation/webpack");
-
-// module.exports = withModuleFederationPlugin({
-//   name: "angularChildModuleFederation",
-//   // filename: "remoteEntry.js",
-//   exposes: {
-//     "./angularChildModuleFederation": ".//src/app/child/child.component.ts",
-//     // './Component': './src/app/app.component.ts',
-//   },
-
-//   shared: {
-//     ...shareAll({
-//       singleton: true,
-//       strictVersion: true,
-//       requiredVersion: "auto",
-//     }),
-//   },
-// });
-
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const mf = require("@angular-architects/module-federation/webpack");
 const path = require("path");
@@ -55,7 +33,7 @@ module.exports = {
       name: "angularChildModuleFederation",
       filename: "remoteEntry.js",
       exposes: {
-        "./angularChildModuleFederation": ".//src/app/child/child.component.ts",
+        "./child": ".//src/app/app.component.ts",
       },
 
       // For hosts (please adjust)
